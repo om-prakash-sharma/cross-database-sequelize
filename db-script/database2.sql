@@ -1,4 +1,4 @@
-CREATE DATABASE demo2;
+CREATE DATABASE master_db;
 
 CREATE TABLE IF NOT EXISTS public.user_licenses(
     id uuid NOT NULL,

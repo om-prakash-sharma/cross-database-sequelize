@@ -1,4 +1,4 @@
-CREATE DATABASE demo1;
+CREATE DATABASE client_db;
 
 CREATE TABLE IF NOT EXISTS public.users (
     id uuid NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS public.users (
 );
 
 INSERT INTO public.users(id, name, email_id)
-VALUES	('3a79173b-7357-4fde-af46-1851ab7c908a', 'Om Sharma', 'om@test.com'),
-        ('3a79173b-7357-4fde-af46-1851ab7c908b', 'Mahendra Sharma', 'mahendra@test.com');
+VALUES	('3a79173b-7357-4fde-af46-1851ab7c908a', 'Om Sharma', 'om.sharma@outlook.in'),
+        ('3a79173b-7357-4fde-af46-1851ab7c908b', 'Mahendra Sharma', 'mahendra.sharma@outlook.in');
 
         

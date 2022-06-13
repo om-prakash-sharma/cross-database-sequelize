@@ -4,11 +4,11 @@
 
 -   Create database
 
-    -   Create one database Ex: demo1
+    -   Create one database Ex: client_db
         ```
-        CREATE DATABASE demo1;
+        CREATE DATABASE client_db;
         ```
-    -   Create table users inside demo1 database
+    -   Create table users inside client_db database
         ```
         CREATE TABLE IF NOT EXISTS public.users (
             id uuid NOT NULL,
@@ -22,15 +22,15 @@
 
         ```
         INSERT INTO public.users(id, name, email_id)
-        VALUES	('3a79173b-7357-4fde-af46-1851ab7c908a', 'Om Sharma', 'om@test.com'),
-        	    ('3a79173b-7357-4fde-af46-1851ab7c908b', 'Mahendra Sharma', 'mahendra@test.com');
+        VALUES	('3a79173b-7357-4fde-af46-1851ab7c908a', 'Om Sharma', 'om.sharma@outlook.in'),
+        	    ('3a79173b-7357-4fde-af46-1851ab7c908b', 'Mahendra Sharma', 'mahendra.sharma@outlook.in');
         ```
 
-    -   Create 2nd database Ex: demo2
+    -   Create 2nd database Ex: master_db
         ```
-        CREATE DATABASE demo2;
+        CREATE DATABASE master_db;
         ```
-    -   Create table user_licenses inside demo2 database
+    -   Create table user_licenses inside master_db database
         ```
         CREATE TABLE IF NOT EXISTS public.user_licenses(
             id uuid NOT NULL,
@@ -57,7 +57,7 @@
     	> CREATE EXTENSION postgres_fdw;
 
     	# Create server connection for remote database
-    	> CREATE SERVER fdw_server FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'localhost', dbname 'demo2', port '5432');
+    	> CREATE SERVER fdw_server FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'localhost', dbname 'master_db', port '5432');
 
     	# Create user mapping to access
     	3. CREATE USER MAPPING FOR postgres SERVER fdw_server OPTIONS (user 'postgres', password 'postgres');
